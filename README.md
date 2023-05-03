@@ -1,6 +1,6 @@
 # webgl-fun
 
-Boilerplate for turn-based game that uses physics. This aspirational; you probably shouldn't use it.
+Just following along with WebGL2 Fundamentals.
 
 ## Getting it running
 
