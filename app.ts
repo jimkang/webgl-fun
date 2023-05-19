@@ -5,6 +5,7 @@ import RandomId from '@jimkang/randomid';
 import { renderTriangle } from './renderers/render-triangle';
 import { renderTexture } from './renderers/render-texture';
 import { renderTransforms } from './renderers/render-tranforms';
+import { renderRotation } from './renderers/render-rotation';
 
 var routeState;
 var textureImages: TexImageSource[] = [];
@@ -42,6 +43,7 @@ async function followRoute({ seed }) {
     textureImages.push(image);
     renderTexture({ canvasSel: '#texture-canvas', textureImages });
     renderTransforms({ canvasSel: '#transforms-canvas', textureImages });
+    renderRotation({ canvasSel: '#rotation-canvas', textureImages });
   }
 }
 
