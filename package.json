@@ -38,6 +38,7 @@
     "@jimkang/randomid": "^1.1.0",
     "accessor": "^3.0.0",
     "basic-2d-math": "^1.0.1",
+    "d3-array": "^3.2.3",
     "handle-error-web": "^1.0.1",
     "one-listener-per-element": "^1.0.1",
     "route-state": "^2.0.5"

@@ -233,7 +233,17 @@ export function renderRotation({
   gl.uniform1i(imageLocation, 0);
 
   // Compute the matrix
-  var matrix = m4.projection(canvas.width, canvas.height, 400);
+  // prettier-ignore
+  var matrix = [
+    1,  0,  0,  0,
+    //
+    0,  1,  0,  0,
+    //
+    0,  0,  1,  0,
+    //
+    0, 0, 0, 1,
+  ];
+  // matrix m4.projection(canvas.width, canvas.height, 400);
   // matrix = m4.translate(matrix, translation[0], translation[1], translation[2]);
   //matrix = m4.xRotate(matrix, Math.PI / 4);
   // matrix = m4.yRotate(matrix, rotation[1]);
@@ -334,10 +344,10 @@ function setUpTexture(
   gl.activeTexture(gl.TEXTURE0 + 0);
   gl.bindTexture(gl.TEXTURE_2D, texture);
   // Setting these things on texture 0. Not yet sure what they do.
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+  // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
 
   var mipLevel = 0; // the largest mip
   var internalFormat = gl.RGBA; // format we want in the texture
