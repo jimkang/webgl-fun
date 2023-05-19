@@ -408,18 +408,20 @@ function setRectangle(gl) {
   var x2 = 1;
   var y1 = 1;
   var y2 = 0;
+
+  // I think that in 2D textures, +y is down?
   gl.bufferData(
     gl.ARRAY_BUFFER,
     // prettier-ignore
     new Float32Array([
       // Triangle 1
       x1, y1,
-      x2, y1,
       x1, y2,
+      x2, y1,
       // Triangle 2
       x1, y2, 
+      x2, y2,
       x2, y1, 
-      x2, y2
     ]),
     gl.STATIC_DRAW
   );
@@ -430,18 +432,20 @@ function setRectangle3D(gl) {
   const x2 = 1;
   const y1 = 1;
   const y2 = 0;
+  // We're in 3D, where +y is up.
+  // So things are rotated by pi in relation to the texture coords.
   gl.bufferData(
     gl.ARRAY_BUFFER,
     // prettier-ignore
     new Float32Array([
       // Triangle 1
-      x1, y1, 0,
+      x2, y2, 0,
       x2, y1, 0,
       x1, y2, 0,
       // Triangle 2
-      x1, y2, 0,
       x2, y1, 0,
-      x2, y2, 0,
+      x1, y1, 0,
+      x1, y2, 0,
     ]),
     gl.STATIC_DRAW
   );
