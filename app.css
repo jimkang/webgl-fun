@@ -64,6 +64,10 @@ a:visited {
 #triangle-canvas {
 }
 
+canvas {
+  border: dashed 2px #666;
+}
+
 .control-pane {
   position: fixed;
   top: 8px;
