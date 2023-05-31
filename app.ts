@@ -43,7 +43,11 @@ async function followRoute({ seed }) {
     textureImages.push(image);
     renderTexture({ canvasSel: '#texture-canvas', textureImages });
     renderTransforms({ canvasSel: '#transforms-canvas', textureImages });
-    renderRotation({ canvasSel: '#rotation-canvas', textureImages });
+    renderRotation({
+      canvasSel: '#rotation-canvas',
+      textureImages,
+      rotation: { x: Math.PI, y: 0, z: Math.PI / 4 },
+    });
   }
 }
 

@@ -1,3 +1,5 @@
+import { Pt3 } from '../types';
+
 var m4 = {
   translation: function (tx, ty, tz) {
     // prettier-ignore
@@ -193,9 +195,11 @@ void main() {
 export function renderRotation({
   canvasSel,
   textureImages,
+  rotation,
 }: {
   canvasSel: string;
   textureImages: TexImageSource[];
+  rotation: Pt3;
 }) {
   var canvas = document.querySelector(canvasSel) as HTMLCanvasElement;
   var gl = canvas.getContext('webgl2');
@@ -245,9 +249,9 @@ export function renderRotation({
   ];
   // matrix m4.projection(canvas.width, canvas.height, 400);
   // matrix = m4.translate(matrix, translation[0], translation[1], translation[2]);
-  //matrix = m4.xRotate(matrix, Math.PI / 4);
-  // matrix = m4.yRotate(matrix, rotation[1]);
-  // matrix = m4.zRotate(matrix, rotation[2]);
+  matrix = m4.xRotate(matrix, rotation.x);
+  matrix = m4.yRotate(matrix, rotation.y);
+  matrix = m4.zRotate(matrix, rotation.z);
   // matrix = m4.scale(matrix, scale[0], scale[1], scale[2]);
 
   // Set the matrix.
